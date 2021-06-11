@@ -1,0 +1,2 @@
+# Aprendizados da semana
+**UAU** Essa semana foi uma das mais bacanas **da minha vida todinha**!! Aprendi a usar o terminal, o VS Code e o github, aprendi **vários** comandos que serão a base de todo conhecimento que vou aprender a partir de agora!! **Foi demais!** 
