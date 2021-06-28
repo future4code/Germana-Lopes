@@ -108,22 +108,22 @@ function segundoMaiorEMenor(array) {
 // EXERCÍCIO 11
 function ordenaArray(array) {
 
-function bubbleSort(array) {
+  function bubbleSort(array) {
     var swapped;
     do {
-        swapped = false;
-        for (var i=0; i < array.length-1; i++) {
-            if (array[i] > array[i+1]) {
-                var temp = array[i];
-                array[i] = array[i+1];
-                array[i+1] = temp;
-                swapped = true;
-            }
+      swapped = false;
+      for (var i = 0; i < array.length - 1; i++) {
+        if (array[i] > array[i + 1]) {
+          var temp = array[i];
+          array[i] = array[i + 1];
+          array[i + 1] = temp;
+          swapped = true;
         }
+      }
     } while (swapped);
-}
+  }
 
-bubbleSort(array);
+  bubbleSort(array);
   return array
 
 }
@@ -136,13 +136,12 @@ function filmeFavorito() {
     diretor: "David Frankel",
     atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
   }
-    return filme
-
+  return filme
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
-  // "Venha assistir ao filme NOME_DO_FILME, de ANO, dirigido por DIRECAO e estrelado por ELENCO."
+   return `"Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}"`
 }
 
 // EXERCÍCIO 14
