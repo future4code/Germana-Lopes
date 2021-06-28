@@ -191,17 +191,32 @@ function menoresDe18(arrayDePessoas) {
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-
+  const multiplicadoPorDois = array.map((numero) => {
+    return numero *2 
+  } )
+    return multiplicadoPorDois
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
+  const multiplicadoPorDois = array.map((numero) => {
+    return (numero *2).toString() 
+  } )
+    return multiplicadoPorDois
 
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
+  const parEImpar = array.map((numero) => {
+    if (numero % 2 === 0) {
+      return `${numero} é par`
+    } else {
+      return `${numero} é ímpar`
+    }
 
+  } )
+     return parEImpar
 }
 
 // EXERCÍCIO 18A
