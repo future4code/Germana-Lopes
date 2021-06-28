@@ -175,12 +175,18 @@ function anonimizaPessoa(pessoa) {
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-
+  const soMaiores = arrayDePessoas.filter((pessoa) => {
+    return pessoa.idade >= 18 
+  } ) 
+   return soMaiores 
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+  const soMenores = arrayDePessoas.filter((pessoa) => {
+    return pessoa.idade < 18 
+  } ) 
+   return soMenores 
 }
 
 // EXERCÍCIO 17A
