@@ -90,7 +90,26 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
+  let maiorNumero
+  let menorNumero
 
+  if (num1 > num2) {
+    maiorNumero = num1
+    menorNumero = num2
+  } else {
+    maiorNumero = num2
+    menorNumero = num1
+  }
+
+  const maiorDivisivelPorMenor = maiorNumero % menorNumero === 0
+  const diferenca = maiorNumero - menorNumero
+
+  return {
+    maiorNumero: maiorNumero,
+    maiorDivisivelPorMenor: maiorDivisivelPorMenor,
+    diferenca: diferenca
+  }
+}
 
   // Formato do objeto a ser retornado:
   // {
@@ -98,7 +117,7 @@ function comparaDoisNumeros(num1, num2) {
   //   maiorDivisivelPorMenor: Y,
   //   diferenca: Z
   // }
-}
+
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
@@ -148,7 +167,7 @@ function imprimeChamada() {
     atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
   }
 
-   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
 }
 
 // EXERCÍCIO 14
@@ -159,12 +178,12 @@ function criaRetangulo(lado1, lado2) {
     perimetro: 2 * (lado1 + lado2),
     area: lado1 * lado2
   }
-    return retangulo
+  return retangulo
 }
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-  const nomeAnonimo = { 
+  const nomeAnonimo = {
     nome: "ANÔNIMO",
     idade: pessoa.idade,
     email: pessoa.email,
@@ -176,33 +195,33 @@ function anonimizaPessoa(pessoa) {
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
   const soMaiores = arrayDePessoas.filter((pessoa) => {
-    return pessoa.idade >= 18 
-  } ) 
-   return soMaiores 
+    return pessoa.idade >= 18
+  })
+  return soMaiores
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
   const soMenores = arrayDePessoas.filter((pessoa) => {
-    return pessoa.idade < 18 
-  } ) 
-   return soMenores 
+    return pessoa.idade < 18
+  })
+  return soMenores
 }
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
   const multiplicadoPorDois = array.map((numero) => {
-    return numero *2 
-  } )
-    return multiplicadoPorDois
+    return numero * 2
+  })
+  return multiplicadoPorDois
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
   const multiplicadoPorDois = array.map((numero) => {
-    return (numero *2).toString() 
-  } )
-    return multiplicadoPorDois
+    return (numero * 2).toString()
+  })
+  return multiplicadoPorDois
 
 }
 
@@ -215,8 +234,8 @@ function verificaParidade(array) {
       return `${numero} é ímpar`
     }
 
-  } )
-     return parEImpar
+  })
+  return parEImpar
 }
 
 // EXERCÍCIO 18A
