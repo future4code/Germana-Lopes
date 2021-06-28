@@ -90,6 +90,8 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
+
+
   // Formato do objeto a ser retornado:
   // {
   //   maiorNumero: X,
@@ -105,6 +107,24 @@ function segundoMaiorEMenor(array) {
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
+
+function bubbleSort(array) {
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < array.length-1; i++) {
+            if (array[i] > array[i+1]) {
+                var temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+}
+
+bubbleSort(array);
+  return array
 
 }
 
