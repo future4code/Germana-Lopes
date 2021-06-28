@@ -7,21 +7,37 @@ function inverteArray(array) {
   return arrayInvetido
 }
 
-
-
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-
+  const numerosParesElevados = []
+  for (let numero of array) {
+    if (numero % 2 === 0) {
+      numerosParesElevados.push(numero * numero)
+    }
+  }
+  return numerosParesElevados
 }
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-
+  const numerosPares = []
+  for (let numero of array) {
+    if (numero % 2 === 0) {
+      numerosPares.push(numero)
+    }
+  }
+  return numerosPares
 }
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
-
+  let maior = -Infinity
+  for (let numero of array) {
+    if (numero > maior) {
+      maior = numero
+    }
+  }
+    return maior
 }
 
 // EXERCÍCIO 05
