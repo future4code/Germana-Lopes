@@ -1,0 +1,37 @@
+.cores-titulo {
+    background-color: #c92fd4;
+    color: black;
+    width: 600px; 
+    padding: 10px 20px;
+    border: 5px solid #150226
+}
+
+    .cores-perguntas {
+    background-color: #76cccb;
+    padding: 10px 20px
+    }
+
+    .cores-respostas {
+        background-color: #076362;
+        padding: 10px 20px
+    }
+
+    #fundo-footer {
+        background-color: black;
+        color: blanchedalmond;
+        border: 10px solid rgb(235, 11, 11);
+        width: 300px; 
+        padding: 10px 20px 
+    }
+
+    #fundo-como-comprar {
+        background-color: violet;
+        width: 600px;
+        padding: 10px 20px
+    }
+
+    a { 
+        margin: 10px
+    }
+
+    
