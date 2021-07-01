@@ -109,6 +109,14 @@ div:last-child {
     text-align: center;
 }
 
+#lupa:hover {
+    opacity: 0.5;
+}
+
+#lupa:active {
+    opacity: 1.0;
+}
+
 #texto-tabela {
     text-align: center;
 }
