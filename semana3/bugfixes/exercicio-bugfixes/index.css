@@ -108,6 +108,10 @@ div:last-child {
     text-align: center;
 }
 
+#texto-tabela {
+    text-align: center;
+}
+
 table {
     width: 60%;
     margin: 0 auto 
