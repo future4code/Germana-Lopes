@@ -71,6 +71,7 @@ div img {
     color: white;
     padding-top: 100px; 
     box-sizing: border-box;
+    
 }
 
 #container-de-descricao>ol {
@@ -105,6 +106,7 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0 auto 
 }
 
 td button {
