@@ -98,9 +98,10 @@ div img {
   *
   **/
 
-  font-family {
-    "Roboto", sans-serif;
-  } 
+  font-face {
+    font-family: 'Roboto', sans-serif
+  }
+  
 
 div:nth-child(2),
 div:last-child {
