@@ -70,8 +70,7 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 100px; 
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 
 #container-de-descricao>ol {
@@ -98,6 +97,10 @@ div img {
   *  ESTILOS COMPRAR 
   *
   **/
+
+  font-family {
+    "Roboto", sans-serif;
+  } 
 
 div:nth-child(2),
 div:last-child {
@@ -128,6 +131,14 @@ button:hover {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    border: none;
+}
+
+#borda-do-input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 5px solid black;
 }
 
 
