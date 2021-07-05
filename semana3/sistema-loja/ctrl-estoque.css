@@ -1,0 +1,25 @@
+#cor-fundo {
+    color: white;
+    background-color: black;
+    padding: 10px 20px
+}
+
+a {
+    margin: 10px
+}
+
+img {
+    width: 225px 
+}
+
+.cor-preco {
+    color: red;
+}
+
+.cores-titulo {
+    background-color: #c92fd4;
+    color: black;
+    width: 600px; 
+    padding: 10px 20px;
+    border: 5px solid #150226
+}

@@ -1,0 +1,21 @@
+a {
+    margin: 10px
+}
+
+.espacos {
+    margin: 10px 
+}
+
+#cor-fundo {
+    color: white;
+    background-color: black;
+    padding: 10px 20px 
+}
+
+.cores-titulo {
+    background-color: #c92fd4;
+    color: black;
+    width: 600px; 
+    padding: 10px 20px;
+    border: 5px solid #150226
+}

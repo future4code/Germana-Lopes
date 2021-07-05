@@ -1,0 +1,23 @@
+#cor-fundo {
+    color: white;
+    background-color: black;
+    padding: 10px 20px 
+}
+
+a {
+    margin: 10px 
+}
+
+.conteiner {
+    display: inline-block;
+    width: 300px; 
+    margin: 20px
+}
+
+.cores-titulo {
+    background-color: #c92fd4;
+    color: black;
+    width: 600px; 
+    padding: 10px 20px;
+    border: 5px solid #150226
+}

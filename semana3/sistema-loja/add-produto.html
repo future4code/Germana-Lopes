@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="add-produto.css">
     <title>Adicionar Produto</title>
 </head>
 <body>
     <div>
-        <h1>Galera Felina</h1>
+        <h1 class="cores-titulo">Galera Felina</h1>
     </div>
     
     <div>
@@ -19,26 +20,26 @@
     </div>
 
     
-    <h2>Adicionar Produto</h2>
+    <h2 id="cor-fundo">Adicionar Produto</h2>
     <form action="">
-        <div>
+        <div class="espacos">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
         </div>
         
-        <div>
+        <div class="espacos">
             <label for="descricao">Descrição do produto: </label>
             <!-- Adicione o id apropriado para o input abaixo -->
             <input type="text" id="descricao" name="descrição">
         </div>
         
-        <div>
+        <div class="espacos">
             <label for="preco">Preço (em R$): </label>
             <!-- Adicione o id apropriado e o type para receber números abaixo -->
             <input type="number" id="preco" name="preço">
         </div>
         
-        <div>
+        <div class="espacos">
             <!-- Preencha as propriedades necessárias para os elementos abaixo -->
             <label for="quantidade-disponivel">Quantidade disponível: </label>
             <input type="number" id="quantidade-disponivel" name="quantidade-disponivel">
@@ -46,7 +47,7 @@
 
         <div class="form-add">
             <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
+            <button type="submit">Enviar Dados</button>
         </div>
 
     </form>
