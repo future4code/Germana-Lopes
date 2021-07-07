@@ -40,6 +40,10 @@ header {
     background-color: #f5a9ee;
 }
 
+.tamanho-video {
+    width: 60%;
+}
+
 .texto-centralizado {
     display:flex;
     justify-content: center;
@@ -65,3 +69,54 @@ footer {
     align-items: center;
     font-family: "Indie flower", cursive;
 }
+
+/* mobile */
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {            /* celulares */
+    #conteudo {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    header {
+        font-size: small;
+        gap: 30px;
+        position:sticky;
+        top: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction:column;
+    }
+
+    footer {
+        font-size: x-small;
+    }
+
+    .tamanho-video {
+        width: 100%;
+    }
+
+    .centraliza-video {
+        height: 60vh;
+    }
+}
+    
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {             /* tablets */
+    .centraliza-video {
+        height: 65vh;
+    }
+
+    #conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }    
+
+    .tamanho-video {
+        width: 100%;
+    }
+}
+    
+    
