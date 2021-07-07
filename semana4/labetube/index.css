@@ -1,0 +1,67 @@
+* {
+    margin: 0
+}
+
+
+header {
+    background-color: purple;
+    display: flex;
+    height: 15vh;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: "Indie flower", cursive;
+    font-size: larger;
+}
+
+#nome-pagina {
+    margin-left: 40px;
+}
+
+#botao-busca {
+    margin-right: 30px;
+}
+
+#conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: start;
+    background-color: #f5a9ee;
+    padding: 20px 30px 30px 30px;
+    column-gap: 10px;
+}
+
+.centraliza-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 15px;
+    background-color: #f5a9ee;
+}
+
+.texto-centralizado {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+a:visited {
+    color: black
+}
+
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    background-color: purple;
+    color: white;
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    font-family: "Indie flower", cursive;
+}
