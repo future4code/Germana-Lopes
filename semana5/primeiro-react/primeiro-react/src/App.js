@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import logoyt from "./img/logo-yt.jpg"
+import emalta from "./img/icone-emalta.png"
+import inscricoes from "./img/icone-inscricoes.png"
+import originais from "./img/icone-originais.png"
+import historico from "./img/logo-historico.png"
 
 function App() {
 
@@ -9,6 +14,14 @@ function App() {
     alert("O vídeo está sendo reproduzido")
   }
 
+  function botaoFunciona() {
+    alert("Viu?! Esse botão funciona!")
+  }
+
+  function backEnd () {
+    alert("Quando eu aprender backend esse botão vai funcionar de verdade!!")
+  }
+
 
 
   return (
@@ -16,18 +29,32 @@ function App() {
       <div className="tela-inteira">
         <header>
           <h1>Lab Tube</h1>
-          <input type="text" placeholder="Busca" id="campoDeBusca" />
+          <input type="text" placeholder="Procure aqui seu vídeo" id="campoDeBusca" onClick={backEnd} />
         </header>
 
         <main>
-          <nav className="menu-vertical">
+          <nav className="menu-vertical" onClick={botaoFunciona}>
             <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
-              <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
+              <div className="logos">
+                <img className="tamanho-logos" src={logoyt} />
+                <li className="botoes-meunu-vertical">Início</li>
+              </div>
+              <div className="logos">
+                <img className="tamanho-logos" src={emalta} />
+                <li className="botoes-meunu-vertical">Em alta</li>
+              </div>
+              <div className="logos">
+                <img className="tamanho-logos" src={inscricoes} />
+                <li className="botoes-meunu-vertical">Inscrições</li>
+              </div>
+              <div className="logos">
+                <img className="tamanho-logos" src={originais} />
+                <li className="botoes-meunu-vertical">Originais</li>
+              </div>
+              <div className="logos">
+                <img className="tamanho-logos" src={historico} />
+                <li className="botoes-meunu-vertical">Histórico</li>
+              </div>
             </ul>
           </nav>
 
@@ -68,7 +95,7 @@ function App() {
         </main>
 
         <footer>
-          <h4>Oi! Eu moro no footer!</h4>
+          <h4>O YouTube não tem footer! Site eterno!</h4>
         </footer>
       </div>
     </div>

@@ -12,12 +12,13 @@ body {
 }
 
 header {
-  background-color: orange;
+  background-color: red;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0 50px;
   height: 10%;
+  gap: 250px;
 }
 
 main {
@@ -26,13 +27,16 @@ main {
 }
 
 .menu-vertical {
-  flex-basis: 200px;
+  flex-basis: 300px;
   border-right-style: solid;
   border-right-width: thin;
+  margin: 0;
+  padding: 0;
 }
 
 .botoes-meunu-vertical {
   list-style-type: none;
+  margin: 0;
 }
 
 .painel-de-videos {
@@ -98,11 +102,13 @@ main {
 
 footer {
   height: 10%;
-  background-color: grey;
+  background-color:red;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 .box-pagina-principal > img {
@@ -112,5 +118,25 @@ footer {
 
 h4 {
   margin-left: 20px;
+}
+
+/* minhas mudanças */
+
+.logos {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-right: 20px;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.tamanho-logos {
+  width: 30px;
+}
+
+input {
+  width: 600px;
+  padding: 10px;
 }
 
