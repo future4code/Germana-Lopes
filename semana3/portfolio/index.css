@@ -1,0 +1,78 @@
+a {
+    color: black;
+    text-decoration: none;
+    margin: 80px;
+    border: 2px solid gray;
+    padding: 10px;
+  }
+
+  a:hover {
+      background-color: gray;
+  }
+
+  nav {
+      padding-top: 30px;
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+      box-sizing: border-box;
+    
+
+  }
+
+  body {
+      background-color: #c4ba9f;
+  }
+
+#titulo {
+    font-family: "Tourney";
+    text-align: center;
+    font-size: 50px;
+    box-sizing: border-box;
+    
+}
+
+#foto-perfil {
+    display: inline;
+    width:400px;
+    padding-top: 100px;
+    padding-left: 75px;
+    box-sizing: border-box;
+}
+
+#texto-perfil {
+    width: 400px;
+    padding-left: 80px;
+    font-size: 15px;
+    text-align: justify;
+}
+
+
+/* estilo estudosetrabalhos */
+
+img {
+    width: 50px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+#estudos {
+    padding-left: 75px;
+    padding-top: 50px;
+}
+
+.descricao {
+    padding-left: 10px;
+}
+
+th {
+    font-size: 30px;
+}
+
+/* estilos projetos */
+
+.imagem-projetos {
+    width: 200px
+}
+
+.imagem-pagina {
+    width: 400px;
+}
