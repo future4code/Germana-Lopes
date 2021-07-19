@@ -17,6 +17,7 @@ class App extends React.Component {
 
   state = {
     etapa: 1,
+
   }
 
   renderizarEtapa = () => {
@@ -32,6 +33,7 @@ class App extends React.Component {
     }
   }
 
+
   irParaProximaEtapa = () => {
     if (this.state.etapa)
       this.setState({ etapa: this.state.etapa + 1 })
@@ -41,8 +43,8 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.renderizarEtapa()}
-        {this.state.etapa !== 4 && 
-        <Botao onClick={this.irParaProximaEtapa}>Próxima etapa</Botao>}  
+        {this.state.etapa !== 4 &&
+          <Botao onClick={this.irParaProximaEtapa}>Próxima etapa</Botao>}
       </div>
     );
   }

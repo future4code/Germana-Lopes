@@ -1,41 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import PerguntaAberta from './PerguntaAberta';
+import PerguntaFechada from './PerguntaFechada';
 
 class Etapa1 extends React.Component {
 
 
+    state = {
+        opcaoSelecionada: "Ensino Médio Incompleto",
+    }
 
 
     render() {
+        const opcoes = [
+            "Ensino médio incompleto",
+            "Ensino médio completo",
+            "Ensino superior incompleto",
+            "Ensino superior completo"
+        ]
+
+
         return (
             <div>
                 <h3>ETAPA 1 - DADOS PESSOAIS</h3>
-                <p>1. Qual o seu nome?</p>
-                <input></input>
-                <p>2. Qual sua idade?</p>
-                <input></input>
-                <p>3. Qual seu e-mail?</p>
-                <input></input>
-                <p>4. Qual a sua escolaridade?</p>
-                <select>
-                    <option selected value="Ensino médio incompleto">Ensino médio incompleto</option>
-                    <option value="Ensino médio completo">Ensino médio completo</option>
-                    <option value="Ensino superior incompleto">Ensino superior incompleto</option>
-                    <option value="Ensino superior completo">Ensino superior completo</option>
-                </select>
+                <PerguntaAberta pergunta={"1. Qual o seu nome?"} />
+                <PerguntaAberta pergunta={"2. Qual a sua idade?"} />
+                <PerguntaAberta pergunta={"1. Qual o seu email?"} />
+
+                <PerguntaFechada pergunta={"4.Qual a sua escolaridade?"}
+                    onChange={event =>
+                        this.setState({ opcaoSelecionada: event.target.value })
+                    }
+                    opcoes={opcoes} />
 
             </div>
         );
     }
 }
-
-
-
-
-
-
-
-
 
 
 
