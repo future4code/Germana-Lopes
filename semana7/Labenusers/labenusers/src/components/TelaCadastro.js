@@ -11,6 +11,10 @@ button {
     margin-top: 20px;
 }
 align-items: center;
+border: 2px solid red;
+margin-top: 30px;
+margin-left: 30px;
+padding: 20px;
 `
 
 
@@ -24,7 +28,7 @@ const headers = {
 };
 
 
-class Tela1 extends React.Component {
+class TelaCadastro extends React.Component {
 
     state = {
         inputNome: "",
@@ -68,6 +72,7 @@ class Tela1 extends React.Component {
     render() {
         return (
             <EstiloGeral>
+                <h2>Tela de cadastro</h2>
                 <p>Nome:</p>
                 <input
                     value={this.state.inputNome}
@@ -86,4 +91,4 @@ class Tela1 extends React.Component {
 }
 
 
-export default Tela1;
+export default TelaCadastro;
