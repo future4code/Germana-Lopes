@@ -3,5 +3,3 @@
 ## http://www.labefy-germana.surge.sh/
 
 ### Site análogo ao Spotify, com funcionalidades de criar playlists, adicionar músicas nas playlists, deletar playlist e visualizar os detalhes das playlists, além de permitir ouvir as músicas adicionadas em cada playlist. 
-
-OBS - No npm run start, as músicas tocaram normalmente, mas no site do surge, não tocam... Não consegui resolver isso.
