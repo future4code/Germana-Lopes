@@ -11,6 +11,9 @@ color: black;
 h1 {
     padding-left: 40px;
 }
+h4 {
+    padding-left: 40px;
+}
 `
 
 const MainContainer = styled.div`
@@ -29,6 +32,9 @@ margin-top: 20px;
 p {
     &:hover {
             cursor: pointer;
+            border: 1px solid black;
+            padding: 7px;
+            background-color: #2941AB;
         }
 }
 border-radius: 20px;
@@ -135,6 +141,7 @@ class ShowAllPlaylists extends React.Component {
             <MainContainer>
                 <ContainerLista>
                     <h1> 🎶 Suas Playlists 🎶 </h1>
+                    <h4>Clique em cima do nome para ver os detalhes!</h4>
                     <div>
                     <h3>{showPlaylists}</h3>
                     </div>
