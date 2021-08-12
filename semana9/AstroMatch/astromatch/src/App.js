@@ -6,14 +6,15 @@ import axios from "axios";
 import Header from './Header/Header';
 import HomeScreen from './HomeScreen/HomeScreen';
 import Background from "./images/background.jpg"
+import MatchScreen from './MatchScreen/MatchScreen';
 
 const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 600px;
+width: 500px;
 min-height: 100vh;
 border: 2px solid black;
-margin-left: 300px;
+margin-left: 400px;
 align-items: center;
 // background-image: url(${Background})
 // background: #FFFFFF url(${Background}) no-repeat;
@@ -25,18 +26,29 @@ background-image: radial-gradient(circle at 37.72% 119.64%, #de9c2c 0, #e5922a 8
 
 function App() {
 
-  // const escolheTela = () => {
-	// 	switch () {
-	// 		case "Ver Matches":
-	// 			return <MatchScreen />;
+  const [screen, setScreen] = useState("HomeScreen")
 
-	// 		case "Limpar Matches":
-	// 			return <ClearMatchList />;
+  const renderScreen = () => {
+		switch (screen) {
+			case "HomeScreen":
+				return <HomeScreen />;
+
+			case "VerMatches":
+				return <MatchScreen />;
+    }
+  }
+
+  const changeScreen = (screen) => {
+    setScreen(screen)
+
+  }
 
   return (
     <MainContainer>
-     <Header />
-     <HomeScreen />
+     <Header changeScreen={changeScreen} screen={screen}/>
+     {renderScreen()}
+     {/* <HomeScreen /> */}
+     {/* <MatchScreen /> */}
     </MainContainer>
   );
 }

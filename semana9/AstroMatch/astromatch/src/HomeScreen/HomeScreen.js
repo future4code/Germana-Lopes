@@ -14,16 +14,16 @@ img {
     height: 400px;
     border: 1px solid black;
 }
-h3 {
+h2 {
     display: flex;
     justify-content: center;
-}
-h5 {
+    }
+h4 {
     display: flex;
     justify-content: center;
-    color: red;
+    color: black;
     width: 300px;
-    
+    font-family: 'Nixie One', cursive;
 }
 `
 const Buttons = styled.div`
@@ -38,7 +38,7 @@ const Skip = styled.div`
 background-color:#d6d6d6;
 width:50px;
 height:50px;
-padding:8px;
+padding:1px;
 font-size:28px;
 border-radius:50%;
 display:flex;
@@ -47,7 +47,7 @@ align-items:center;
 margin-left:60px;
 color:green;
 border:1px solid green;
-cursor: pointer;
+// cursor: pointer;
 transition:300ms;
 :hover{
   color:white;
@@ -60,7 +60,7 @@ background-color:#d6d6d6;
 margin-right:60px;
 width:50px;
 height:50px;
-padding:8px;
+padding:1px;
 font-size:28px;
 border-radius:50%;
 display:flex;
@@ -68,7 +68,7 @@ justify-content:center;
 align-items:center;
 color:red;
 border:1px solid green;
-cursor: pointer;
+// cursor: pointer;
 transition:300ms;
 :hover{
   color:white;
@@ -94,8 +94,8 @@ function HomeScreen() {
             .then((response) => {
                 setProfile(response.data.profile);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                console.log(error.message);
             });
     }
 
@@ -121,8 +121,8 @@ function HomeScreen() {
         <div>
             <CardStyle>
                 <img src={profile.photo} />
-                <h3>{profile.name}</h3>
-                <h5>{profile.bio}</h5>
+                <h2> <strong>{profile.name}</strong></h2>
+                <h4>{profile.bio}</h4>
             </CardStyle>
             <Buttons>
                 <Skip>
