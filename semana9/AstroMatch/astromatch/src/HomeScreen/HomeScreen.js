@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components'
 import axios from "axios";
+
+const right = keyframes`
+    from {
+        transform: translate(0) rotate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-200px) rotate(-20deg);
+        opacity: 0;
+    }
+`;
 
 const CardStyle = styled.div`
 display: flex,
@@ -30,11 +42,11 @@ const Buttons = styled.div`
 display:flex;
 justify-content:center;
 margin-top:20px;
-gap: 50px;
+gap: 70px;
 margin-bottom: 20px;
 `
 
-const Skip = styled.div`
+const Skip = styled.button`
 background-color:#d6d6d6;
 width:50px;
 height:50px;
@@ -45,9 +57,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin-left:60px;
-color:green;
-border:1px solid green;
-// cursor: pointer;
+color:black;
+border:2px solid black;
+cursor: pointer;
 transition:300ms;
 :hover{
   color:white;
@@ -60,19 +72,18 @@ background-color:#d6d6d6;
 margin-right:60px;
 width:50px;
 height:50px;
-padding:1px;
 font-size:28px;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
 color:red;
-border:1px solid green;
-// cursor: pointer;
+border:2px solid black;
+cursor: pointer;
 transition:300ms;
 :hover{
   color:white;
-  background-color:purple;
+  background-color:red;
 }
  `
 
@@ -125,11 +136,11 @@ function HomeScreen() {
                 <h4>{profile.bio}</h4>
             </CardStyle>
             <Buttons>
-                <Skip>
-                    <button onClick={() => { getProfile(); }}> X </button>
+                <Skip onClick={() => { getProfile(); }}>
+                      X 
                 </Skip>
-                <Like>
-                    <button onClick={() => { choosePerson(); }}> ❤️ </button>
+                <Like onClick={() => { choosePerson(); }}>
+                    ❤ 
                 </Like>
             </Buttons>
         </div>
