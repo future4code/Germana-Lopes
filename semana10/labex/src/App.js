@@ -9,13 +9,14 @@ import CreateTripPage from "./pages/CreateTripPage"
 import ListTripsPage from "./pages/ListTripsPage"
 import LoginPage from "./pages/LoginPage"
 import TripDetailsPage from "./pages/TripDetailsPage"
+import Header from './components/Header';
+import { Router } from './router/Router';
 
 function App() {
   return (
     <div>
-      <HomePage />
-      <AdminHomePage />
-      
+      <Header />
+     <Router />
     </div>
   );
 }
