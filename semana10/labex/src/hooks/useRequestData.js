@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/germana-etges-lovelace'
+export const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas'
 
 export const useRequestData = (url, inicialState) => {
   const [data, setData] = useState(inicialState);
