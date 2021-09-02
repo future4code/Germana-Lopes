@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { useHistory } from 'react-router'
 import useForm from '../hooks/useForm'
 import { signUp } from '../services/user'
+import logo from "../images/logo.jpg"
+import { goBack, goToLogin } from '../routes/coordinator'
 
 const LoginStyle = styled.div`
 height: 100vh;
@@ -21,6 +23,19 @@ button {
     width: 200px;
     padding: 10px;
 }
+`
+
+const HeaderStyle = styled.div`
+display: flex;
+height: 6%;
+width: 100%;
+background-color: white;
+color: black;
+align-items: center;
+justify-content: space-around;
+img {
+    width: 80px;
+    }
 `
 
 
@@ -41,6 +56,13 @@ const SignInPage = () => {
     }
 
     return (
+        <div>
+        <HeaderStyle>
+                <img src={logo} alt="some text" />
+                <h2>Labeddit</h2>
+                <h3>Fale sobre o que você quiser!</h3>
+                <button onClick={() => goBack(history)}>Voltar</button>
+            </HeaderStyle>
         <LoginStyle>
             <form onSubmit={onSubmitForm}>
                 <input
@@ -72,6 +94,7 @@ const SignInPage = () => {
                 <button>Cadastrar</button>
             </form>
         </LoginStyle>
+        </div>
     )
 }
 export default SignInPage

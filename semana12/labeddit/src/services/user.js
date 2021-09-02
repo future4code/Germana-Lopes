@@ -12,7 +12,7 @@ export const signUp = (body, history) => {
         window.alert("Cadastro efetuado com sucesso!")
     })
     .catch(error => {
-        console.log(error.message)
+        console.log(error.response.data.errors)
     })
 }
 

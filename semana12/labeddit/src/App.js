@@ -12,7 +12,7 @@ background-color: #DAE0E6;
 function App() {
   return (
     <MainStyle>
-      <Header />
+      {/* <Header /> */}
       <Router />
     </MainStyle>
   );
