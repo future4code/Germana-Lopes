@@ -10,7 +10,7 @@ import useForm from '../hooks/useForm'
 import { useState, useEffect } from "react";
 
 const CommentSection = styled.div `
-border: solid black 2px;
+// border: solid black 2px;
 `
 
 
@@ -30,7 +30,7 @@ const CommentList = (props) => {
     const showComments = data && data.map((comment) => {
         return (
             <CommentSection>
-                <p>{comment.username}:</p>
+                <h4>{comment.username} comentou:</h4>
                 <p>{comment.body}</p>
             </CommentSection>
         )

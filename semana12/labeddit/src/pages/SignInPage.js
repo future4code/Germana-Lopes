@@ -7,6 +7,8 @@ import useForm from '../hooks/useForm'
 import { signUp } from '../services/user'
 import logo from "../images/logo.jpg"
 import { goBack, goToLogin } from '../routes/coordinator'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
 
 const LoginStyle = styled.div`
 height: 100vh;
@@ -23,11 +25,14 @@ button {
     width: 200px;
     padding: 10px;
 }
+h2 {
+    font-family: 'Risque', cursive;
+}
 `
 
 const HeaderStyle = styled.div`
 display: flex;
-height: 6%;
+height: 4%;
 width: 100%;
 background-color: white;
 color: black;
@@ -36,6 +41,16 @@ justify-content: space-around;
 img {
     width: 80px;
     }
+h1, h2 {
+        font-family: 'Risque', cursive;
+    }
+`
+
+const FormStyle = styled.form`
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
 `
 
 
@@ -57,44 +72,48 @@ const SignInPage = () => {
 
     return (
         <div>
-        <HeaderStyle>
+            <HeaderStyle>
                 <img src={logo} alt="some text" />
-                <h2>Labeddit</h2>
-                <h3>Fale sobre o que você quiser!</h3>
-                <button onClick={() => goBack(history)}>Voltar</button>
+                <h1>LabEddit</h1>
+                <h2>Fale sobre o que você quiser!</h2>
+                <Button variant="contained" color="primary" size="small" onClick={() => goBack(history)}>Voltar</Button>
             </HeaderStyle>
-        <LoginStyle>
-            <form onSubmit={onSubmitForm}>
-                <input
-                    required
-                    id="outlined-required"
-                    placeholder="Nome de usuári@"
-                    type="name"
-                    variant="outlined"
-                    name="username"
-                    value={form.username}
-                    onChange={handleForm}></input>
-                <input required
-                    id="outlined-required"
-                    placeholder="E-mail"
-                    type="email"
-                    variant="outlined"
-                    name="email"
-                    value={form.email}
-                    onChange={handleForm}></input>
-                <input required
-                    id="outlined-password-input"
-                    placeholder="Senha"
-                    type="password"
-                    autoComplete="current-password"
-                    variant="outlined"
-                    name="password"
-                    value={form.password}
-                    onChange={handleForm}></input>
-                <button>Cadastrar</button>
-            </form>
-        </LoginStyle>
-        </div>
+            <LoginStyle>
+            <h2>Faça seu cadastro aqui!</h2>
+                <FormStyle onSubmit={onSubmitForm}>
+                    <TextField
+                        required
+                        id="filled-required"
+                        label="Nome de usuári@"
+                        variant="filled"
+                        type="name"
+                        variant="outlined"
+                        name="username"
+                        value={form.username}
+                        onChange={handleForm} />
+
+                    <TextField required
+                        id="filled-required"
+                        label="E-mail"
+                        type="email"
+                        variant="outlined"
+                        name="email"
+                        value={form.email}
+                        onChange={handleForm} />
+
+                    <TextField required
+                        id="filled-required"
+                        label="Senha"
+                        type="password"
+                        autoComplete="current-password"
+                        variant="outlined"
+                        name="password"
+                        value={form.password}
+                        onChange={handleForm}/>
+                    <Button variant="contained" color="primary" type="submit">Cadastrar</Button>
+                </FormStyle>
+            </LoginStyle>
+        </div >
     )
 }
 export default SignInPage

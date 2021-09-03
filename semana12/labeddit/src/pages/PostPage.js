@@ -11,6 +11,8 @@ import CommentList from '../components/CommentList'
 import logo from "../images/logo.jpg"
 import { goBack } from '../routes/coordinator'
 import { useHistory } from 'react-router'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
 
 const LoginStyle = styled.div`
 height: 100vh;
@@ -32,7 +34,7 @@ button {
 
 const HeaderStyle = styled.div`
 display: flex;
-height: 6%;
+height: 4%;
 width: 100%;
 background-color: white;
 color: black;
@@ -41,6 +43,18 @@ justify-content: space-around;
 img {
     width: 80px;
     }
+h1, h2 {
+        font-family: 'Risque', cursive;
+    }
+`
+
+const CommentSection = styled.div`
+display: flex;
+-webkit-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79); 
+box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79);
+width: 200px;
+border: solid black 1px;
+padding-left: 10px;
 `
 
 
@@ -79,9 +93,9 @@ const PostPage = () => {
         <div>
         <HeaderStyle>
                 <img src={logo} alt="some text" />
-                <h2>Labeddit</h2>
-                <h3>Fale sobre o que você quiser!</h3>
-                <button onClick={() => goBack(history)}>Voltar</button>
+                <h1>LabEddit</h1>
+                <h2>Fale sobre o que você quiser!</h2>
+                <Button variant="contained" color="primary" size="small" onClick={() => goBack(history)}>Voltar</Button>
             </HeaderStyle>
         <LoginStyle>
             {showPost &&
@@ -89,14 +103,23 @@ const PostPage = () => {
                     post={showPost[0]}
                 />}
             <form onSubmit={onSubmitForm}>
-                <input required
-                    placeholder="Comente aqui!"
-                    name="body"
-                    value={form.body}
-                    onChange={handleForm}></input>
-                <button type="submit">Postar</button>
+
+               <TextField label="Size"
+                        id="standard-size-small"
+                        defaultValue="Small"
+                        size="small"
+                        id="outlined-basic"
+                        label="Comente aqui"
+                        variant="outlined"
+                        required
+                        name="body"
+                        value={form.body}
+                        onChange={handleForm} />                
+                <Button variant="contained" color="primary" size="small" type="submit">Comentar</Button>
             </form>
+            <CommentSection>
             <CommentList />
+            </CommentSection>
         </LoginStyle>
         </div>
     )

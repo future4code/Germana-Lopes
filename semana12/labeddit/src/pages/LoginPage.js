@@ -6,6 +6,8 @@ import { useHistory } from 'react-router'
 import useForm from '../hooks/useForm'
 import { login } from "../services/user"
 import logo from "../images/logo.jpg"
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 
 const HeaderStyle = styled.div`
 display: flex;
@@ -17,6 +19,9 @@ align-items: center;
 justify-content: space-around;
 img {
     width: 80px;
+    }
+h1, h2 {
+        font-family: 'Risque', cursive;
     }
 `
 
@@ -35,6 +40,9 @@ input {
 button {
     width: 200px;
     padding: 10px;
+}
+h2 {
+    font-family: 'Risque', cursive;
 }
 `
 
@@ -69,32 +77,35 @@ const LoginPage = () => {
         <div>
             <HeaderStyle>
                 <img src={logo} alt="some text" />
-                <h2>Labeddit</h2>
-                <h3>Fale sobre o que você quiser!</h3>
+                <h1>LabEddit</h1>
+                <h2>Fale sobre o que você quiser!</h2>
             </HeaderStyle>
             <LoginStyle>
-                <h3>Faça seu login ou cadastre-se!</h3>
+                <h2>Faça seu login ou cadastre-se!</h2>
                 <FormStyle onSubmit={onSubmitForm}>
-                    <input required
-                        id="outlined-required"
-                        placeholder="E-mail"
+                    <TextField
+                        required
+                        id="filled-required"
+                        label="E-mail"
+                        variant="filled"
                         type="email"
                         variant="outlined"
                         name="email"
                         value={form.email}
-                        onChange={handleForm} ></input>
-                    <input required
-                        id="outlined-password-input"
+                        onChange={handleForm} />
+                    <TextField
+                        required
+                        id="filled-required"
                         placeholder="Senha"
                         type="password"
                         autoComplete="current-password"
                         variant="outlined"
                         name="password"
                         value={form.password}
-                        onChange={handleForm}></input>
-                    <button type="submit">Me deixa entrar!</button>
+                        onChange={handleForm} />
+                    <Button variant="contained" color="primary" type="submit">Me deixa entrar!</Button>
                 </FormStyle>
-                <button onClick={goToSignIn}>Faça seu cadastro!</button>
+                <Button color="primary" size="large" onClick={goToSignIn}>Clique aqui e faça seu cadastro!</Button>
             </LoginStyle>
         </div>
     )

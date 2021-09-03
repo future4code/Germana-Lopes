@@ -10,6 +10,9 @@ import useForm from '../hooks/useForm'
 import { useHistory } from 'react-router'
 import logo from "../images/logo.jpg"
 import { goBack } from '../routes/coordinator'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const HeaderStyle = styled.div`
 display: flex;
@@ -22,6 +25,9 @@ justify-content: space-around;
 img {
     width: 80px;
     }
+h1, h2 {
+    font-family: 'Risque', cursive;
+}
 `
 
 const LoginStyle = styled.div`
@@ -76,39 +82,44 @@ const FeedPage = () => {
 
     return (
         <div>
-        <HeaderStyle>
+            <HeaderStyle>
                 <img src={logo} alt="some text" />
-                <h2>Labeddit</h2>
-                <h3>Fale sobre o que você quiser!</h3>
-                <button onClick={() => goBack(history)}>Voltar</button>
+                <h1>LabEddit</h1>
+                <h2>Fale sobre o que você quiser!</h2>
+                <Button variant="contained" color="primary" size="small" onClick={() => goBack(history)}>Voltar</Button>
             </HeaderStyle>
-        <LoginStyle>
-            <FormStyle onSubmit={onSubmitForm}>
-                <input required
-                    placeholder="Título do Post"
-                    name="title"
-                    value={form.title}
-                    onChange={handleForm}></input>
-                <input required
-                    placeholder="Escreva seu post"
-                    name="body"
-                    value={form.body}
-                    onChange={handleForm}></input>
-                <button type="submit">Postar</button>
-            </FormStyle>
+            <LoginStyle>
+                <FormStyle onSubmit={onSubmitForm}>
+                    <TextField label="Size"
+                        id="standard-size-small"
+                        defaultValue="Small"
+                        size="small"
+                        id="outlined-basic"
+                        label="Título do Post"
+                        variant="outlined"
+                        required
+                        name="title"
+                        value={form.title}
+                        onChange={handleForm} />
+                    <TextareaAutosize aria-label="minimum height" minRows={10} placeholder="Escreva seu post aqui!" required
+                        name="body"
+                        value={form.body}
+                        onChange={handleForm} />
+                    <Button variant="contained" color="primary" type="submit">Postar</Button>
+                </FormStyle>
 
-            {!data && "Carregando..."}
-            {data && data.map((post) => {
-                return (
-                    <PostCard showButton
-                        key={post.id}
-                        post={post}
-                    />
-                )
-            }
-            )}
+                {!data && "Carregando..."}
+                {data && data.map((post) => {
+                    return (
+                        <PostCard showButton
+                            key={post.id}
+                            post={post}
+                        />
+                    )
+                }
+                )}
 
-        </LoginStyle>
+            </LoginStyle>
         </div>
     )
 }
