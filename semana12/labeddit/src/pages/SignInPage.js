@@ -79,7 +79,7 @@ const SignInPage = () => {
                 <Button variant="contained" color="primary" size="small" onClick={() => goBack(history)}>Voltar</Button>
             </HeaderStyle>
             <LoginStyle>
-            <h2>Faça seu cadastro aqui!</h2>
+                <h2>Faça seu cadastro aqui!</h2>
                 <FormStyle onSubmit={onSubmitForm}>
                     <TextField
                         required
@@ -109,7 +109,7 @@ const SignInPage = () => {
                         variant="outlined"
                         name="password"
                         value={form.password}
-                        onChange={handleForm}/>
+                        onChange={handleForm} />
                     <Button variant="contained" color="primary" type="submit">Cadastrar</Button>
                 </FormStyle>
             </LoginStyle>

@@ -9,7 +9,7 @@ import { createComment } from '../services/posts'
 import useForm from '../hooks/useForm'
 import { useState, useEffect } from "react";
 
-const CommentSection = styled.div `
+const CommentSection = styled.div`
 // border: solid black 2px;
 `
 
@@ -24,7 +24,6 @@ const CommentList = (props) => {
         }
     }
 
-    // {{baseURL}}/posts/:id/comments
     const { data, getData } = useRequestData(`${BASE_URL}/posts/${params.postId}/comments`, headers, undefined)
 
     const showComments = data && data.map((comment) => {

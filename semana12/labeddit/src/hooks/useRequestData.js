@@ -6,18 +6,18 @@ export const useRequestData = (url, requestHeaders, inicialState) => {
 
     const getData = () => {
         axios
-        .get(url, requestHeaders)
-        .then((response) => {
-            setData(response.data);
-            console.log(response.data)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+            .get(url, requestHeaders)
+            .then((response) => {
+                setData(response.data);
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
-    
+
     useEffect(() => {
-       getData() 
+        getData()
     }, []);
 
     return { data, getData };

@@ -4,20 +4,27 @@ import styled from 'styled-components'
 import { useHistory } from 'react-router'
 import { goToPost } from '../routes/coordinator'
 import Button from '@material-ui/core/Button'
+import { postVote } from '../services/posts'
+import { BASE_URL } from "../constants/requestConfigs";
+import { useRequestData } from "../hooks/useRequestData";
+import IconButton from '@material-ui/core/IconButton'
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 
 const MainCard = styled.div`
 display: flex;
 flex-direction: column;
-width: 300px;
+width: 400px;
 -webkit-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79); 
 box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79);
-border: solid 1px black;
+border-radius: 20px;
 `
 
 const NameUser = styled.div`
 display: flex;
-border-bottom: solid black 2px;
+-webkit-box-shadow: 3px 3px 7px 1px rgba(0,0,0,0.79); 
+box-shadow: 3px 3px 7px 1px rgba(0,0,0,0.79);
 height: 40px;
 gap: 10px;
 justify-content: space-between;
@@ -40,7 +47,9 @@ const Votes = styled.div`
 display: flex;
 height: 50px;
 align-items: center;
-border-top: solid black 2px;
+gap: 15px;
+-webkit-box-shadow: 3px 3px 7px 1px rgba(0,0,0,0.79); 
+box-shadow: 3px 3px 7px 1px rgba(0,0,0,0.79);
 padding-left: 10px;
 button {
     width: 10px;
@@ -50,12 +59,16 @@ button {
 
 const Comments = styled.div`
 display: flex;
-align-items: flex-end;
+margin-left: 50px;
 `
 
 const PostCard = (props) => {
 
     const history = useHistory()
+
+    const voteCount = props.post.voteSum === null ? 0 : props.post.voteSum
+
+    const commentCount = props.post.commentCount === null ? 0 : props.post.commentCount
 
     return (
         <MainCard>
@@ -72,11 +85,16 @@ const PostCard = (props) => {
             </ShowPost>
 
             <Votes>
-                <button>⬆</button>
-                <p>0</p>
-                <button>⬇</button>
+
+                <IconButton onClick={() => postVote(1, props.post.id, props.getData)}>
+                    <ArrowUpwardIcon color="primary" />
+                </IconButton>
+                <p>{voteCount}</p>
+                <IconButton onClick={() => postVote(-1, props.post.id, props.getData)}>
+                    <ArrowDownwardIcon color="primary" />
+                </IconButton>
                 <Comments>
-                <p>0 comentários</p>
+                    <p>{commentCount} comentário(s)</p>
                 </Comments>
             </Votes>
         </MainCard>

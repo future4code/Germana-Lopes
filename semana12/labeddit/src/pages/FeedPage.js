@@ -114,6 +114,7 @@ const FeedPage = () => {
                         <PostCard showButton
                             key={post.id}
                             post={post}
+                            getData={getData}
                         />
                     )
                 }

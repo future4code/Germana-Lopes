@@ -1,9 +1,9 @@
 # Labeddit
 
-### Website >>> 
+### Website >>> http://www.labeddit-germana.surge.sh
 
 ### Resumo do projeto
-Rede social similar ao Reddit, onde é possível fazer postagens, comentar nos posts de outras pessoas e votar!
+Rede social similar ao Reddit, onde é possível fazer postagens, comentar nos posts de outras pessoas e votar nos posts!
 Essa página utiliza uma API desenvolvida pela Labenu.
 
 Projeto desenvolvido com [Create React App]
@@ -15,11 +15,14 @@ senha: 12345678
 ```
 
 ## Funcionalidades:
-* Cadastro
 * Login
+* Cadastro
 * Fazer uma postagem
 * Comentar em uma postagem
 * Ver detalhes de uma postagem
+* Ver comentários feitos em uma postagem
+* Votar em curtir ou não curtir um post
+* Visualizar números de curtidas e comentários em um post
 
 ## Bibliotecas e Frameworks
 * React
@@ -29,4 +32,4 @@ senha: 12345678
 * Material-UI
 
 
-*Desenvolvido com muito sofrimento por Germana Etges*
+*Desenvolvido com muito esforço por Germana Etges*

@@ -21,14 +21,7 @@ flex-direction: column;
 margin-top: 50px;
 gap: 30px;
 align-items: center;
-input {
-    width: 250px;
-    padding: 15px;
-}
-button {
-    width: 200px;
-    padding: 10px;
-}
+
 `
 
 
@@ -52,9 +45,10 @@ const CommentSection = styled.div`
 display: flex;
 -webkit-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79); 
 box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.79);
-width: 200px;
+width: 350px;
 border: solid black 1px;
 padding-left: 10px;
+border-radius: 20px;
 `
 
 
@@ -75,7 +69,7 @@ const PostPage = () => {
             Authorization: localStorage.getItem("token")
         }
     }
-   
+
 
     const { data, getData } = useRequestData(`${BASE_URL}/posts`, headers, undefined)
 
@@ -91,20 +85,20 @@ const PostPage = () => {
 
     return (
         <div>
-        <HeaderStyle>
+            <HeaderStyle>
                 <img src={logo} alt="some text" />
                 <h1>LabEddit</h1>
                 <h2>Fale sobre o que você quiser!</h2>
                 <Button variant="contained" color="primary" size="small" onClick={() => goBack(history)}>Voltar</Button>
             </HeaderStyle>
-        <LoginStyle>
-            {showPost &&
-                <PostCard
-                    post={showPost[0]}
-                />}
-            <form onSubmit={onSubmitForm}>
+            <LoginStyle>
+                {showPost &&
+                    <PostCard
+                        post={showPost[0]}
+                    />}
+                <form onSubmit={onSubmitForm}>
 
-               <TextField label="Size"
+                    <TextField label="Size"
                         id="standard-size-small"
                         defaultValue="Small"
                         size="small"
@@ -114,13 +108,13 @@ const PostPage = () => {
                         required
                         name="body"
                         value={form.body}
-                        onChange={handleForm} />                
-                <Button variant="contained" color="primary" size="small" type="submit">Comentar</Button>
-            </form>
-            <CommentSection>
-            <CommentList />
-            </CommentSection>
-        </LoginStyle>
+                        onChange={handleForm} />
+                    <Button variant="contained" color="primary" size="small" type="submit">Comentar</Button>
+                </form>
+                <CommentSection>
+                    <CommentList />
+                </CommentSection>
+            </LoginStyle>
         </div>
     )
 }
