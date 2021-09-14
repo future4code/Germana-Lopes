@@ -7,6 +7,7 @@ display: flex;
 width: 100vw;
 flex-wrap: wrap;
 gap: 20px;
+margin-left: 30px;
 `
 
 const CardName = styled.div`
@@ -26,6 +27,7 @@ display: flex;
 margin-top: 30px;
 margin-left: 500px;
 padding: 10px;
+margin-bottom: 30px;
 `
 
 
@@ -49,20 +51,8 @@ const HomePage = () => {
             });
     }
 
-    // const getImage = () => {
-    //     axios
-    //         .get("https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg")
-    //         .then((response) => {
-    //             // setI(response.data);
-    //             console.log(response.data)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
 
     useEffect(() => {
-        // getImage()
         getData()
     }, []);
 
@@ -71,7 +61,7 @@ const HomePage = () => {
         shuffleCards()
     }
 
-    const shuffleCards=() => {
+    const shuffleCards = () => {
         for (let i = cards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [cards[i], cards[j]] = [cards[j], cards[i]];
@@ -83,10 +73,10 @@ const HomePage = () => {
         return (
             <div>
                 <CardName>
-                    <p>{card.name}</p>
+                    <p><strong>{card.name}</strong></p>
                 </CardName>
                 <ImageSize>
-                    <img src={frontCard ? "https://picsum.photos/200/300" : data.imageBackCard} />
+                    <img src={frontCard ? `${data.imagesUrl}${card.image}` : data.imageBackCard} />
                 </ImageSize>
             </div>
         )
