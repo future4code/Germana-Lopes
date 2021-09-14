@@ -37,6 +37,9 @@ const HomePage = () => {
     const [data, setData] = useState(undefined)
     const [frontCard, setFrontCard] = useState(true)
     const [cards, setCards] = useState([])
+    const [pickedCard, setPickedCard] = useState([])
+
+    console.log(pickedCard)
 
     const getData = () => {
         axios
@@ -69,9 +72,13 @@ const HomePage = () => {
         setCards(cards)
     }
 
+    const pickCard = (card) => {
+        setPickedCard(card)
+    }
+
     const showCards = cards && cards.map((card) => {
         return (
-            <div>
+            <div onClick={() => {pickCard(card)} }>
                 <CardName>
                     <p><strong>{card.name}</strong></p>
                 </CardName>
