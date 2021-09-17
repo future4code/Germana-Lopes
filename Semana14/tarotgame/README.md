@@ -1,6 +1,6 @@
 # Jogo de Tarôt Online!
 
-### Website >>> http://www.labeddit-germana.surge.sh
+### Website >>> http://www.tarot-germana.surge.sh
 
 ### Resumo do projeto
 Jogo simples com todas as cartas oficias de Tarot, permitindo ao usuário embaralhar as cartas e clicar em apenas uma, revelando assim o conteúdo da carta.
