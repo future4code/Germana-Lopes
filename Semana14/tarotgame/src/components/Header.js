@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <HeaderStyle>
 
-            <h1>Ouça o que o Tarot tem pra dizer!</h1>
+            <h1>Ouça o que o Tarôt tem pra dizer!</h1>
 
         </HeaderStyle>
     )
