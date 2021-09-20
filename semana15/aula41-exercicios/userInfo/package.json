@@ -1,0 +1,11 @@
+{
+    "name": "aula41-exercicios",
+    "version": "1.0.0",
+    "description": "Nome e idade como variáveis",
+    "main": "nameAndAgeInfo.js",
+    "scripts": {
+      "start": "node nameAndAgeInfo.js"
+    },
+    "author": "Germana Etges",
+    "license": "ISC"
+  }
