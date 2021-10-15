@@ -1,20 +1,20 @@
-import BaseDataBase from "./baseDataBase";
+import BaseDataBase from "./BaseDataBase"
 
 
-export const usersTableName = "labcommerce_backend_users"
-export const productsTableName = "labcommerce_backend_products"
-export const purchaseTableName = "labcommerce_backend_purchase"
+export const usersTableName = "labecommerce_backend_users"
+export const productsTableName = "labecommerce_backend_products"
+export const purchaseTableName = "labecommerce_backend_purchase"
 
 export default class TableDataBase extends BaseDataBase {
-    public createTables = async () : Promise<void> => {
+    public createTables = async (): Promise<void> => {
         await BaseDataBase.connection.raw(`
             CREATE TABLE IF NOT EXISTS ${usersTableName} (
                 id VARCHAR(64) NOT NULL PRIMARY KEY,
                 name VARCHAR(64) NOT NULL,
                 email VARCHAR(64) NOT NULL UNIQUE,
                 age INT NOT NULL
-            );
-
+            );`)
+        await BaseDataBase.connection.raw(`
             CREATE TABLE IF NOT EXISTS ${productsTableName} (
                 id VARCHAR(64) NOT NULL PRIMARY KEY,
                 name VARCHAR(120) NOT NULL,
@@ -22,8 +22,8 @@ export default class TableDataBase extends BaseDataBase {
                 price FLOAT NOT NULL,
                 origin VARCHAR(120),
                 destination VARCHAR(120)
-            );
-
+            ); `)
+        await BaseDataBase.connection.raw(`
             CREATE TABLE IF NOT EXISTS ${purchaseTableName} (
                 id VARCHAR(64) NOT NULL PRIMARY KEY,
                 user_id VARCHAR(64) NOT NULL,
@@ -32,9 +32,10 @@ export default class TableDataBase extends BaseDataBase {
                 total_value FLOAT NOT NULL,
                 FOREIGN KEY (user_id) REFERENCES ${usersTableName}(id),
                 FOREIGN KEY (product_id) REFERENCES ${productsTableName}(id)
-            );
+        );
         `)
-        .then(()=> { console.log("Tabelas criadas") })
-        .catch(Error);
+       
+            .then(() => { console.log("Tabelas criadas!") })
+            .catch(Error);
     }
 };
