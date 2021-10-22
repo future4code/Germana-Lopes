@@ -5,6 +5,7 @@ import { compareHash } from "../services/hashManager";
 import { generateToken } from "../services/authenticator";
 
 
+
 export default async function login(
     req: Request,
     res: Response
@@ -12,27 +13,33 @@ export default async function login(
     try {
         const { email, password } = req.body;
 
-        if( !email || !password ){
+        if (!email || !password) {
             res.statusCode = 422;
-            throw new Error("'email' and 'password' required");
+            throw new Error("'email' and 'password' precisam ser preenchidos!");
         };
 
         const [user] = await connection(userTableName)
-            .where({email});
+            .where({ email });
+       
 
-        const passwordIsCorrect:boolean = compareHash(password, user.password);
-
-        if( !user || !passwordIsCorrect){
+        if (!user) {
             res.statusCode = 401;
-            throw new Error("Invalid credentials");
+            throw new Error("Usuário não cadastrado!");
         };
 
-        const token = generateToken({id: user.id});
+        const passwordIsCorrect: boolean = compareHash(password, user.password);
 
-        res.send({token});
-     
+        if (!passwordIsCorrect) {
+            res.statusCode = 401;
+            throw new Error("Senha incorreta!");
+        };
+
+        const token = generateToken({ id: user.id });
+
+        res.send({ token });
+
     } catch (error: any) {
-        if(res.statusCode === 200){
+        if (res.statusCode === 200) {
             res.status(500).send("Internal server error");
         } else {
             res.send(error.message)

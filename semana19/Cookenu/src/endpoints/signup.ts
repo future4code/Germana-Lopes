@@ -17,11 +17,11 @@ export default async function signup(
 
         if (!name || !email || !password) {
             res.statusCode = 422
-            throw new Error("'name', 'email' and 'password' required")
+            throw new Error("'name', 'email' and 'password' precisam ser preenchidos!")
         }
         if (password.length < 6) {
             res.statusCode = 422
-            throw new Error("Password must contain at least 6 characters")
+            throw new Error("A senha precisa ter no mínimo 6 caracteres!")
         }
 
 
@@ -30,7 +30,7 @@ export default async function signup(
 
         if (user) {
             res.statusCode = 409
-            throw new Error("Email already in use")
+            throw new Error("Email já cadastrado, tente outro endereço!")
         }
 
         const id: string = generateId()
@@ -48,6 +48,7 @@ export default async function signup(
 
         if (res.statusCode === 200) {
             res.status(500).send("Internal server error")
+            console.log(error)
         } else {
             res.send({ error: `${error}` })
         }

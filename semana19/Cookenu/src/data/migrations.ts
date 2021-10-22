@@ -2,7 +2,7 @@ import connection from "./connection";
 
 export const userTableName = "cookenu_users"
 export const recipeTableName = "cookenu_recipes"
-// export const userFollowTable = "cookenu_userfollow"
+
 
 connection.raw(`
     CREATE TABLE IF NOT EXISTS ${userTableName} (

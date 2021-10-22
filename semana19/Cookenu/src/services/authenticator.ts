@@ -11,7 +11,7 @@ export const generateToken = (
 ): string => sign(
     payload,
     JWT_KEY!,
-    {expiresIn: "4h"}
+    {expiresIn: "24h"}
 )
 
 export const getTokenData = (
