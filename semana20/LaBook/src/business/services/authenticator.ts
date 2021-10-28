@@ -1,28 +1,27 @@
-import * as jwt from "jsonwebtoken"
-import { USER_ROLES } from "../data/insertUser"
+import * as jwt from "jsonwebtoken";
 
-export type AuthenticationData = {
-   id: string,
-   role: USER_ROLES
-}
+interface AuthenticationData {
+    id: string
+};
 
-export function generateToken(
-   payload: AuthenticationData
-): string {
-   return jwt.sign(
-      payload,
-      process.env.JWT_KEY as string,
-      {
-         expiresIn: "24min"
-      }
-   )
-}
+export class Authenticator {
+    generateToken(info: AuthenticationData): string {
+        const token = jwt.sign(
+            { id: info.id },
+            process.env.JWT_KEY as string,
+            { expiresIn: "2 days" }
+        );
+        return token;
+    };
 
-export function getTokenData(
-   token: string
-): AuthenticationData {
-   return jwt.verify(
-      token,
-      process.env.JWT_KEY as string
-   ) as AuthenticationData
-}
+    public static getTokenData(
+        token: string
+    ): AuthenticationData {
+        const result: any = jwt.verify(
+            token,
+            process.env.JWT_KEY as string
+        );
+
+        return { id: result.id, };
+    };
+};
