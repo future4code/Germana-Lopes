@@ -1,100 +1,28 @@
-# To Do List
+# <h1> LaBook 💌 💌 💌</h1>
+<h6> Projeto de Back End </h6>
 
-## ESTRUTURA DE DADOS  
-  
-* ## Usuários
-  * id
-  * name
-  * nickname 
-  * email
+Esse projeto é uma simulação de back end de uma rede social estilo Facebook, com os seguintes <b>endpoints</b>:
 
-* ## Tarefas 
-  * id
-  * title
-  * description
-  * deadline
-  * status: `"to_do" || "doing" || "done"`
-  * author 
-  * assignees
-   
----
+ <li>✔️Signup</li>
+ <li>✔️Login</li>
+ <li>✔️Criar post</li>
+ <li>✔️Filtrar post pela ID do post</li>
+ 
 
-## CRIAÇÃO DE TABELAS - MySql
+--- 
 
-```sql
-CREATE TABLE to_do_list_users (
-    id VARCHAR(64) PRIMARY KEY,
-    name VARCHAR(64) NOT NULL,
-    nickname VARCHAR(64) NOT NULL,
-    email VARCHAR(64) NOT NULL
-);
-```
-```sql
-CREATE TABLE to_do_list_tasks (
-    id VARCHAR(64) PRIMARY KEY,
-    title VARCHAR(64) NOT NULL,
-    description VARCHAR(1024) DEFAULT "No description provided",
-    deadline DATE,
-    status ENUM("TO_DO", "DOING", "DONE") DEFAULT "TO_DO",
-    author_id VARCHAR(64),
-    FOREIGN KEY (author_id) REFERENCES to_do_list_users(id)
-);
-```
-```sql
-CREATE TABLE to_do_list_assignees (
-    task_id VARCHAR(64),
-    assignee_id VARCHAR(64),
-    PRIMARY KEY (task_id, assignee_id),
-    FOREIGN KEY (task_id) REFERENCES to_do_list_tasks(id),
-    FOREIGN KEY (assignee_id) REFERENCES to_do_list_users(id)
-);
-```
----
-
-## ENDPOINTS 
-
-* ## Criar usuário
-  * Método: PUT
-  * Path: `/user`
-  * Body:
-    * name (obrigatório)
-    * nickname (obrigatório)
-    * email (obrigatório)
-
-* ## Pegar usuário pelo id
-  * Método: GET
-  * Path: `/user/:id`
-  * Body de Resposta: (retornar um erro se não encontrar)
-    * id
-    * nickname
-
-
-* ## Editar usuário**
-  * Método: POST
-  * Path: `/user/edit/:id`
-  * Body:
-    * name (opcional; não pode ser vazio)
-    * nickname (opcional; não pode ser vazio)
-    * email (opcional; não pode ser vazio)
-
-
-* ## Criar tarefa
-  * Método: PUT
-  * Path: `/task`
-  * Body:
-    * title (obrigatório)
-    * description (obrigatório)
-    * deadline (obrigatório; formato `YYYY-MM-DD`)
-    * authorId
-
-* ## Pegar tarefa pelo id
-  * Método: GET
-  * Path: `/task/:id`
-  * Body de Resposta: (retornar um erro se não encontrar)
-    * id
-    * title 
-    * description
-    * deadline (formato `YYYY-MM-DD`)
-    * status
-    * authorId
-    * authorNickname
+<h3> Tecnologias e linguagens utilizadas: </h3>
+ <li> - Node.Js </li>
+ <li> - MySQL </li>
+ <li> - Typescript </li>
+ <li> - Express </li>
+ <li> - Dotenv </li>
+ <li> - Knex </li>
+ <li> - Hash </li>
+ <li> - uuid </li>
+ <li> - json </li>
+ <li> - bcrypjs </li>
+ 
+ --- 
+ 
+<h4> Desenvolvido por <b>Germana Etges</b>, com muita dedicação! <h4>  

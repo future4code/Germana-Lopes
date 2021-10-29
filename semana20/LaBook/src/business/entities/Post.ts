@@ -3,12 +3,12 @@ export interface Post {
     photo: string
     description: string
     type: string
-    authorId: string
+    author_Id: string
 };
 
 export interface PostDTO {
     photo: string
     description: string
     type: string
-    authorId: string
+    author_Id: string
 };
