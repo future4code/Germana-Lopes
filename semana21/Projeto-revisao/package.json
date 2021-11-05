@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "clear && ts-node-dev ./src/index.ts",
     "start": "tsc && node ./build/index.js",
+    "migrations": "ts-node-dev ./src/data/migrations.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
