@@ -1,0 +1,6 @@
+###
+POST http://localhost:3003/athlete/register
+
+{
+    "name": "Aline"
+}

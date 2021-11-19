@@ -4,8 +4,8 @@ export enum UNIT {
 };
 
 export interface ResultDTO {
-    athleteId: string
+    competitionName: string
+    athleteName: string
     value: number
     unit: UNIT
-    competitionId: string
 };

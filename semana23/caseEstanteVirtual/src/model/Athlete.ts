@@ -1,3 +1,3 @@
 export interface AthleteDTO {
-    name: string
+    athleteName: string
 };
