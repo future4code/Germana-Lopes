@@ -5,3 +5,4 @@ export const athleteRouter = express.Router();
 const athleteController = new AthleteController();
 
 athleteRouter.post("/register", athleteController.insertAthlete)
+athleteRouter.get("/all", athleteController.getAllAthletes)

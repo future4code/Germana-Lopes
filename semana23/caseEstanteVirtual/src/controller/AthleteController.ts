@@ -19,4 +19,16 @@ export default class AthleteController {
             res.status(500).send({ message: error.message });
         };
     };
+
+    async getAllAthletes(req: Request, res:Response){
+        try{
+
+            const result = await new AthleteBusiness().getAllAthletes();
+    
+            res.status(200).send(result)
+
+        } catch (error:any){
+            res.status(500).send({ message: error.message });
+        };
+    };
 }

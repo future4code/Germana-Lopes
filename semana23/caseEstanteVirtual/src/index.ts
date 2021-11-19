@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/athlete", athleteRouter);
+app.use("/result", athleteRouter);
 
 app.listen(3003, () => {
     console.log('Servidor rodando na porta 3003')

@@ -12,4 +12,10 @@ export default class AthleteDataBase extends BaseDataBase {
             });
         return result[0];
     };
+
+    public getAllAthletes = async (): Promise<any> => {
+        const result = await BaseDataBase.connection(athleteTableName)
+            .select("*");
+        return result;
+    };
 }

@@ -1,6 +1,7 @@
 import AthleteDataBase from "../data/AthleteDataBase";
 import { AthleteDTO } from "../model/Athlete";
 import { IdGenerator } from "../services/idGenerator";
+import getAllAthletes from "../controller/AthleteController"
 
 export default class AthleteBusiness {
 
@@ -28,5 +29,10 @@ export default class AthleteBusiness {
 
         return athlete;
 
+    };
+
+    async getAllAthletes (){
+        const result = await this.athleteDataBase.getAllAthletes();
+        return result;
     };
 }
